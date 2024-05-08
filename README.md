@@ -11,7 +11,7 @@ This application allows users to add, search, and view recipes based on ingredie
 ## Technology Stack
 
 - **Frontend**: React.js
-- **Backend**: Node.js (Express.js) for backend services (if applicable)
+- **Backend**: Node.js for lambda functions. Also used AWS API Gateway for interaction with backend services
 - **Database**: AWS DynamoDB for storing recipe data
 - **Authentication**: Firebase Authentication
 - **Hosting/Deployment**: This application is hosted on localhost
