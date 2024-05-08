@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* Base font and background settings for the entire app */
+body {
+    font-family: 'Arial', sans-serif; /* Consistent font */
+    background-color: #f4f4f9; /* Light grey background for the app */
+    color: #333; /* Primary text color */
+    line-height: 1.6; /* Good readability for text */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Headings styling for better visual hierarchy */
+h1, h2, h3, h4, h5, h6 {
+    color: #007bff; /* Blue color for headings to match navbar */
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Standard padding and margins for layout consistency */
+.container, .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Helper classes for text alignment */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Button enhancements for a more engaging interaction */
+button {
+    cursor: pointer; /* Indicates clickable items */
+    outline: none; /* Removes the default focus outline */
+}
+
+/* Forms and input fields styling for better user experience */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%; /* Full width */
+    padding: 8px; /* Padding for inputs */
+    margin-top: 5px; /* Margin top for spacing */
+    margin-bottom: 10px; /* Margin bottom for spacing */
+    box-sizing: border-box; /* Border box for padding inclusion in width */
+    border: 1px solid #ccc; /* Subtle borders for inputs */
+    border-radius: 4px; /* Rounded borders for aesthetics */
+}
+
+/* Styling for links to make them more attractive */
+a {
+    color: #007bff; /* Matching the primary color theme */
+    text-decoration: none; /* No underlines for a cleaner look */
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline; /* Underline on hover for clarity */
+    color: #0056b3; /* Darker blue on hover for interaction feedback */
+}
