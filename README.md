@@ -1,6 +1,6 @@
 # Recipe Recommender App
 
-This application allows users to add, search, and view recipes based on ingredients and dietary preferences. It's designed to make finding your next cooking inspiration easier and more accessible.
+This application allows users to add, search, and view recipes based on ingredients and dietary preferences.
 
 ## Features
 
