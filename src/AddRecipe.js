@@ -31,7 +31,7 @@ function AddRecipe() {
             if (!response.ok) {
                 throw new Error(`HTTP status ${response.status}`);
             }
-            const data = await response.json();
+            //const data = await response.json();
             alert('Recipe added successfully!');
         } catch (error) {
             console.error('Error adding recipe:', error);
