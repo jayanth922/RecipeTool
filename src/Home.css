@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.header, .add-recipe-form, .content-area {
+    color: #333; /* Ensuring good color contrast for readability */
+}
+
+.logout-button {
+    padding: 6px 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f;
+}
+
+
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #f5f5f5; /* Soft gray background */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #ffffff; /* White background for the header for contrast */
+}
+
+.content-area {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.add-recipe {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.recipes-feed {
+    flex-grow: 2;
+    height: 90vh;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #e8e8e8; /* Slightly darker shade for the section to distinguish from the main area */
+}
+
+.recipe-card {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #ffffff; /* White background for cards to pop out */
+}
+
+.recipe-link {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #f5f5f5; /* Soft gray background */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #ffffff; /* White background for contrast */
+}
+
+h1, .recipe-link h2 { /* Applying color to all h1 and h2 within recipe links */
+    color: #28527a; /* Deep Blue for a richer, less harsh title */
+}
+
+.content-area {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.add-recipe, .recipes-feed {
+    background-color: #e8e8e8; /* Slightly darker shade to distinguish sections */
+}
+
+.recipe-card {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #ffffff; /* White background for clarity */
+}
+
+.recipe-link {
+    text-decoration: none;
+    display: block;
+}
+
+
+.add-recipe-button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Vibrant green color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    text-align: center;
+    display: inline-block; /* Ensures the button can align nicely with other inline or inline-block elements */
+}
+
+.add-recipe-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.content-area {
+    display: flex;
+    align-items: start;
+    width: 100%;
+}
+
+.add-recipe-button {
+    margin-right: 20px; 
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recipes-feed {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f5f5f5;
+}

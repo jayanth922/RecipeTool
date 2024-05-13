@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+.header, .add-recipe-form, .content-area {
+    color: #333; /* Ensuring good color contrast for readability */
+}
+
+.add-recipe-form {
+    width: 60%;
+    margin: 20px auto;
+    background-color: #f0f0f0; /* Lighter gray for form background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: #333; /* Darker text for better readability */
+}
+
+.add-recipe-form h1 {
+    text-align: center;
+    color: #28527a; /* Deep blue for the form title */
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    color: #666; /* Dark gray for labels */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.submit-btn, .home-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background-color: #5cb85c; /* Green for submit button */
+}
+
+.submit-btn:hover {
+    background-color: #4cae4c; /* Darken on hover */
+}
+
+.home-btn {
+    background-color: #337ab7; /* Blue for the home button */
+}
+
+.home-btn:hover {
+    background-color: #286090; /* Darken on hover */
+}

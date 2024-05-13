@@ -1,102 +1,66 @@
 import React, { useState } from 'react';
-import { Card, Form, Button, Container } from 'react-bootstrap';
-import './styles.css';
-import { auth } from './firebase-config';  
-import './App.css';
+import { useNavigate } from 'react-router-dom';
+import './AddRecipe.css';
 
 function AddRecipe() {
-    const [recipe, setRecipe] = useState({ name: '', ingredients: '', instructions: '', dietType: '' });
+  const [recipe, setRecipe] = useState({
+    RecipeID: '', RecipeName: '', Ingredients: '', CookTime: '', Cuisine: '', Course: '', Diet: '', Instructions: '', URL: ''
+  });
+  const navigate = useNavigate();
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setRecipe({ ...recipe, [name]: value });
-    };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('https://41tfnt6hx6.execute-api.ap-south-1.amazonaws.com/add', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(recipe)
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP status ${response.status}`);
+      }
+      alert('Recipe added successfully!');
+      navigate('/home');
+    } catch (error) {
+      alert(`Failed to add recipe: ${error.message}`);
+    }
+  };
 
-    const addRecipe = async () => {
-        const userEmail = auth.currentUser ? auth.currentUser.email : 'Anonymous';  
+  const handleReturnHome = () => {
+    navigate('/home'); 
+  };
 
-        try {
-            const response = await fetch('https://nxstpsl9x3.execute-api.ap-south-1.amazonaws.com/recipes', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    ...recipe,
-                    ingredients: recipe.ingredients.split(',').map(ingredient => ingredient.trim()), 
-                    UserName: userEmail, 
-                    dietType: recipe.dietType  
-                })
-            });
-            if (!response.ok) {
-                throw new Error(`HTTP status ${response.status}`);
-            }
-            //const data = await response.json();
-            alert('Recipe added successfully!');
-        } catch (error) {
-            console.error('Error adding recipe:', error);
-            alert('Failed to add recipe');
-        }
-    };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setRecipe({ ...recipe, [name]: value });
+  };
 
-    return (
-        <Container className="d-flex flex-column justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
-            <Card className="card-custom">
-                <Card.Header>Add a Recipe</Card.Header>
-                <Card.Body>
-                    <Form>
-                        <Form.Group>
-                            <Form.Label>Recipe Name</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter recipe name"
-                                name="name"
-                                value={recipe.name}
-                                onChange={handleInputChange}
-                                className="form-control"
-                            />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Ingredients</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={3}
-                                placeholder="List ingredients separated by commas"
-                                name="ingredients"
-                                value={recipe.ingredients}
-                                onChange={handleInputChange}
-                                className="form-control"
-                            />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Instructions</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={3}
-                                placeholder="Enter instructions"
-                                name="instructions"
-                                value={recipe.instructions}
-                                onChange={handleInputChange}
-                                className="form-control"
-                            />
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Diet Type</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter diet type"
-                                name="dietType"
-                                value={recipe.dietType}
-                                onChange={handleInputChange}
-                                className="form-control"
-                            />
-                        </Form.Group>
-                        <Button onClick={addRecipe} className="btn-primary mt-3">Add Recipe</Button>
-                    </Form>
-                </Card.Body>
-            </Card>
-        </Container>
-    );
+  return (
+    <div className="add-recipe-form">
+      <h1>Add New Recipe</h1>
+      <form onSubmit={handleSubmit}>
+        {Object.keys(recipe).map(key => (
+          <div className="input-group" key={key}>
+            <label htmlFor={key}>{key}</label>
+            <input
+              id={key}
+              name={key}
+              type={key === 'RecipeID' ? 'number' : 'text'}  // Set input type to number for RecipeID
+              value={recipe[key]}
+              onChange={handleChange}
+              placeholder={`Enter ${key}`}
+            />
+          </div>
+        ))}
+        <button type="submit" className="submit-btn">Submit Recipe</button>
+        <button type="button" className="home-btn" onClick={handleReturnHome}>Return to Home</button>
+      </form>
+    </div>
+  );
 }
 
 export default AddRecipe;
+
+

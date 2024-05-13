@@ -3,13 +3,12 @@ import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDOrOhfEEAX-7ibX9MIQv1gnA8kSR2p3SQ",
-  authDomain: "recipe-c46f6.firebaseapp.com",
-  projectId: "recipe-c46f6",
-  storageBucket: "recipe-c46f6.appspot.com",
-  messagingSenderId: "688102002038",
-  appId: "1:688102002038:web:723c3dc380a8cf659c7e57",
-  measurementId: "G-5ZRT5PL2M1"
+  apiKey: "AIzaSyC2RfroHfEZlarTd3yxNhIQjOQ39AW5Jns",
+  authDomain: "recipe-e99b2.firebaseapp.com",
+  projectId: "recipe-e99b2",
+  storageBucket: "recipe-e99b2.appspot.com",
+  messagingSenderId: "1015671491699",
+  appId: "1:1015671491699:web:52cf30537117a58886ae06"
 };
 
 
